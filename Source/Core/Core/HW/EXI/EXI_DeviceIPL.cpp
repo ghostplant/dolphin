@@ -325,6 +325,7 @@ void CEXIIPL::TransferByte(u8& data)
 
         if ((dev_addr >= 0x001AFF00) && (dev_addr <= 0x001FF474) && !m_fonts_loaded)
         {
+#if 0
           if (dev_addr >= 0x001FCF00)
           {
             PanicAlertFmtT("Error: Trying to access Windows-1252 fonts but they are not loaded. "
@@ -335,6 +336,7 @@ void CEXIIPL::TransferByte(u8& data)
             PanicAlertFmtT("Error: Trying to access Shift JIS fonts but they are not loaded. "
                            "Games may not show fonts correctly, or crash.");
           }
+#endif
           // Don't be a nag
           m_fonts_loaded = true;
         }

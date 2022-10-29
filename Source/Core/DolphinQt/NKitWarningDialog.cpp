@@ -18,7 +18,7 @@
 
 bool NKitWarningDialog::ShowUnlessDisabled(QWidget* parent)
 {
-  if (Config::Get(Config::MAIN_SKIP_NKIT_WARNING))
+  if (true || Config::Get(Config::MAIN_SKIP_NKIT_WARNING))
     return true;
   else
     return NKitWarningDialog(parent).exec() == QDialog::Accepted;

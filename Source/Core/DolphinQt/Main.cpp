@@ -250,6 +250,7 @@ int main(int argc, char* argv[])
 #if defined(USE_ANALYTICS) && USE_ANALYTICS
     if (!Config::Get(Config::MAIN_ANALYTICS_PERMISSION_ASKED))
     {
+#if 0
       ModalMessageBox analytics_prompt(&win);
 
       analytics_prompt.setIcon(QMessageBox::Question);
@@ -269,6 +270,8 @@ int main(int argc, char* argv[])
                       "settings."));
 
       const int answer = analytics_prompt.exec();
+#endif
+      const int answer = QMessageBox::No;
 
       Config::SetBase(Config::MAIN_ANALYTICS_PERMISSION_ASKED, true);
       Settings::Instance().SetAnalyticsEnabled(answer == QMessageBox::Yes);

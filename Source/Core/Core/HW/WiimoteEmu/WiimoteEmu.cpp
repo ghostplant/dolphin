@@ -658,9 +658,14 @@ void Wiimote::LoadDefaults(const ControllerInterface& ciface)
 // Buttons
 #if defined HAVE_X11 && HAVE_X11
   // A
-  m_buttons->SetControlExpression(0, "`Click 1`");
+  m_buttons->SetControlExpression(0, "X");
   // B
-  m_buttons->SetControlExpression(1, "`Click 3`");
+  m_buttons->SetControlExpression(1, "Z");
+
+  m_swing->SetControlExpression(0, "W");     // Up
+  m_swing->SetControlExpression(1, "S");   // Down
+  m_swing->SetControlExpression(2, "A");   // Left
+  m_swing->SetControlExpression(3, "D");  // Right
 #elif __APPLE__
   // A
   m_buttons->SetControlExpression(0, "`Left Click`");
@@ -674,8 +679,8 @@ void Wiimote::LoadDefaults(const ControllerInterface& ciface)
 #endif
   m_buttons->SetControlExpression(2, "`1`");  // 1
   m_buttons->SetControlExpression(3, "`2`");  // 2
-  m_buttons->SetControlExpression(4, "Q");    // -
-  m_buttons->SetControlExpression(5, "E");    // +
+  m_buttons->SetControlExpression(4, "`3`");    // -
+  m_buttons->SetControlExpression(5, "`4`");    // +
 
 #ifdef _WIN32
   m_buttons->SetControlExpression(6, "RETURN");  // Home
