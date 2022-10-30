@@ -199,10 +199,10 @@ void Nunchuk::DoState(PointerWrap& p)
 void Nunchuk::LoadDefaults(const ControllerInterface& ciface)
 {
   // Stick
-  m_stick->SetControlExpression(0, "W");  // up
-  m_stick->SetControlExpression(1, "S");  // down
-  m_stick->SetControlExpression(2, "A");  // left
-  m_stick->SetControlExpression(3, "D");  // right
+  m_stick->SetControlExpression(0, "I");  // up
+  m_stick->SetControlExpression(1, "K");  // down
+  m_stick->SetControlExpression(2, "J");  // left
+  m_stick->SetControlExpression(3, "L");  // right
 
   // Because our defaults use keyboard input, set calibration shape to a square.
   m_stick->SetCalibrationFromGate(ControllerEmu::SquareStickGate(1.0));
